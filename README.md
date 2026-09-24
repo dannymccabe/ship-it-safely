@@ -47,47 +47,48 @@ ship-it-safely/
 
 ### In the Claude app or on claude.ai
 
-Skills work on the Pro, Max, Team and Enterprise plans, and need code execution switched on.
+This works on every Claude plan, including Free. It takes about two minutes and you don't need to be technical.
 
-1. Download ship-it-safely.zip. Don't unzip it.
-2. Open Settings, then Capabilities, and make sure "Code execution and file creation" is on.
-3. Go to Customize, then Skills. Click the + button, choose Create skill, then upload the ZIP file.
-4. Make sure the skill is toggled on, then start a new chat and try:
+1. Download ship-it-safely.zip. Don't unzip it. Claude needs the ZIP file exactly as it downloaded.
+2. In Claude, open Settings, then Capabilities. Make sure "Code execution and file creation" is switched on.
+3. Go to Customize, then Skills. Click the + button, choose Create skill, then choose Upload a skill and pick the ZIP file.
+4. Check the skill is switched on. Then start a new chat and type:
 
    ```
    Use the ship-it-safely skill to check my site is ready to launch.
    ```
 
-> On a Team or Enterprise plan, an admin may need to switch skills on for your workspace first. Ask your workspace owner if you can't see the Skills section.
+> On a Team or Enterprise plan, an admin may need to switch skills on for your workspace first. If you can't see the Skills section, ask whoever manages your Claude account.
 
 ### In Claude Code
 
-Claude Code reads skills from a folder on your computer.
+If you use Claude Code, the skill lives in a folder on your computer.
 
-1. For a personal install, available in every project, run:
+1. Copy the skill into your personal skills folder by running:
 
    ```bash
    git clone https://github.com/dannymccabe/ship-it-safely.git ~/.claude/skills/ship-it-safely
    ```
 
-2. Or unzip ship-it-safely.zip into ~/.claude/skills/ (personal) or .claude/skills/ inside one project.
-3. Type / in Claude Code and look for ship-it-safely in the list, or just ask:
+2. No git? Unzip ship-it-safely.zip into ~/.claude/skills/ instead, so you end up with ~/.claude/skills/ship-it-safely/SKILL.md.
+3. Start a new Claude Code session, or restart it if it's already open, so it picks up the skill.
+4. Type / and look for ship-it-safely in the list. Then ask:
 
    ```
    Use the ship-it-safely skill to check my site is ready to launch.
    ```
 
-> Shortcut: skills uploaded to claude.ai also load in Claude Code when you sign in with the same Claude account (Claude Code v2.1.273 or later). You may only need to upload once.
+> Shortcut: a skill you upload on claude.ai also appears in Claude Code when you're signed in with the same Claude account (Claude Code v2.1.273 or later). You may only need to upload it once.
 
 ## Troubleshooting
 
-**I can't see the Skills section.** Turn on "Code execution and file creation" in Settings, then Capabilities. On Team or Enterprise, ask your admin to enable skills.
+**I can't see the Skills section.** Open Settings, then Capabilities, and switch on "Code execution and file creation". On a Team or Enterprise plan, ask your admin to switch skills on.
 
-**The upload failed.** Upload the ZIP exactly as downloaded. It must contain a folder called ship-it-safely with SKILL.md inside it. Re-zipping or renaming the folder breaks it.
+**The upload failed.** Upload the ZIP exactly as it downloaded. Unzipping it, renaming it or zipping it again breaks it. Inside, it must hold a folder called ship-it-safely with a file called SKILL.md.
 
-**Claude isn't using the skill.** Check it's toggled on, then name it in your request: "Use the ship-it-safely skill to..."
+**Claude isn't using the skill.** Check the skill is switched on in Customize, then Skills. Then name it in your message: "Use the ship-it-safely skill to..."
 
-**How do I update it?** In the Claude app, delete the old skill and upload the new ZIP. In Claude Code, run git pull inside ~/.claude/skills/ship-it-safely.
+**How do I update it?** In the Claude app, delete the old skill and upload the new ZIP. In Claude Code, run git pull inside ~/.claude/skills/ship-it-safely, then start a new session.
 
 <!-- install:end -->
 
